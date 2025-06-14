@@ -10,7 +10,6 @@ import io.cucumber.junit.CucumberOptions;
 				  glue={"stepDefinitions","hooks"},
 				  plugin= {"pretty","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
 				  dryRun=false,
-				  tags="@flights",
 				  publish=true
 				  )
 public class TestRunner {

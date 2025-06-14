@@ -23,11 +23,15 @@ public class Hooks {
 	Properties p;
 	
 	@Before
-	public void setup() throws IOException
+	public void setup(Scenario scenario) throws IOException
 	{
 	driver=Base.initilizeBrowser();
 	p=Base.getProperties();
-	driver.get(p.getProperty("appURL"));
+	if (scenario.getSourceTagNames().contains("@flights")) {
+		driver.get(p.getProperty("flights.appURL"));
+    } else if (scenario.getSourceTagNames().contains("@hotels")) {
+    	driver.get(p.getProperty("hotels.appURL"));
+    }
 	driver.manage().window().maximize();
 	}
 	

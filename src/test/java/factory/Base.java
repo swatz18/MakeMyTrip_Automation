@@ -34,6 +34,7 @@ public static WebDriver initilizeBrowser() throws IOException
 		        options.addArguments("--disable-blink-features=AutomationControlled");  // Hide automation flag
 		        options.addArguments("--disable-infobars");  // Prevent detection
 		        options.addArguments("--start-maximized");  // Looks more human
+		        options.addArguments("--disable-notifications");  //disables browser notifications
 		        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
 		        options.setExperimentalOption("useAutomationExtension", false);
 		        driver=new ChromeDriver(options);

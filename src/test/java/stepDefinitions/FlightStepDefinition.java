@@ -14,6 +14,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.FlightsPageObjects;
+import utilities.TextContext;
 
 public class FlightStepDefinition {
 		FlightsPageObjects flight;
@@ -70,6 +71,9 @@ public class FlightStepDefinition {
     			int actualDate=Integer.parseInt(date.getText());
     			minPriceDates.add(actualDate);
     		}	
+    		// to reuse the dates in hotel booking
+    		String mindate=String.valueOf(minPriceDates.get(0));
+    		TextContext.setTravelDate(mindate);
     		System.out.println("The Dates available for low price for the month of "+expMonth+ +expYear+ " are:"+minPriceDates);
 		}
 }
